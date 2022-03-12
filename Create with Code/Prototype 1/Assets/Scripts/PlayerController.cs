@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed = 20.0f;
-    public float turnSpeed = 0;
-    public float horizontalInput;
+    private float speed = 20.0f;
+    private float turnSpeed = 30;
+    private float horizontalInput;
+    private float verticalInput;
 
     // Start is called before the first frame update
     void Start()
@@ -17,10 +18,14 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Move the bus forward
-        transform.Translate(Vector3.forward * Time.deltaTime * speed);
-
         horizontalInput = Input.GetAxis("Horizontal");
-        transform.Translate(Vector3.right * Time.deltaTime * turnSpeed * horizontalInput);
+        verticalInput = Input.GetAxis("Vertical");
+
+        // Moves the bus on vertical input
+        transform.Translate(Vector3.forward * Time.deltaTime * speed * verticalInput);
+
+        //Rotates the bus on horizontal input
+        transform.Rotate(Vector3.up, horizontalInput * turnSpeed * Time.deltaTime);
+        //transform.Translate(Vector3.right * Time.deltaTime * turnSpeed * horizontalInput);
     }
 }
