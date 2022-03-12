@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float speed = 20.0f;
+    public float turnSpeed = 0;
+    public float horizontalInput;
 
     // Start is called before the first frame update
     void Start()
@@ -17,5 +19,8 @@ public class PlayerController : MonoBehaviour
     {
         // Move the bus forward
         transform.Translate(Vector3.forward * Time.deltaTime * speed);
+
+        horizontalInput = Input.GetAxis("Horizontal");
+        transform.Translate(Vector3.right * Time.deltaTime * turnSpeed * horizontalInput);
     }
 }
