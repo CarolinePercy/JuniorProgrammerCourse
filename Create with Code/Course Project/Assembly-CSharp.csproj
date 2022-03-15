@@ -53,17 +53,18 @@
     <UnityVersion>2020.3.19f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\ExplosiveLLC\Crafting Mecanim Animation Pack\Code\CrafterActions.cs" />
-    <Compile Include="Assets\ExplosiveLLC\Crafting Mecanim Animation Pack\Code\CrafterController.cs" />
-    <Compile Include="Assets\ExplosiveLLC\Crafting Mecanim Animation Pack\Code\CrafterState.cs" />
-    <Compile Include="Assets\ExplosiveLLC\Crafting Mecanim Animation Pack\Code\CrafterIKHands.cs" />
-    <Compile Include="Assets\ExplosiveLLC\Crafting Mecanim Animation Pack\Code\InputHelper.cs" />
+    <Compile Include="Assets\ExplosiveLLC\Demo Elements\Code\SmoothFollow.cs" />
     <Compile Include="Assets\ExplosiveLLC\Crafting Mecanim Animation Pack\Code\CrafterAnimatorTriggers.cs" />
+    <Compile Include="Assets\ExplosiveLLC\Crafting Mecanim Animation Pack\Code\CrafterActions.cs" />
+    <Compile Include="Assets\ExplosiveLLC\Crafting Mecanim Animation Pack\Code\CrafterIKHands.cs" />
+    <Compile Include="Assets\ExplosiveLLC\Demo Elements\Code\GUIControls.cs" />
     <Compile Include="Assets\ExplosiveLLC\Crafting Mecanim Animation Pack\Code\CrafterAnimatorController.cs" />
     <Compile Include="Assets\ExplosiveLLC\Crafting Mecanim Animation Pack\Code\CrafterNavigation.cs" />
-    <Compile Include="Assets\ExplosiveLLC\Demo Elements\Code\GUIControls.cs" />
-    <Compile Include="Assets\ExplosiveLLC\Demo Elements\Code\SmoothFollow.cs" />
+    <Compile Include="Assets\ExplosiveLLC\Crafting Mecanim Animation Pack\Code\CrafterController.cs" />
+    <Compile Include="Assets\ExplosiveLLC\Crafting Mecanim Animation Pack\Code\InputHelper.cs" />
     <Compile Include="Assets\ExplosiveLLC\Crafting Mecanim Animation Pack\Code\CrafterShowItem.cs" />
+    <Compile Include="Assets\ExplosiveLLC\Crafting Mecanim Animation Pack\Code\CrafterState.cs" />
+    <Compile Include="Assets\Scripts\PlayerController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
