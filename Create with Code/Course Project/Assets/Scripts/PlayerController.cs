@@ -19,18 +19,13 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         moving = false;
-        input = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+        input = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
 
         if (input.x != 0 || input.z != 0)
         {
             moving = true;
 
-            //input = input.x * Vector3.right + input.z * Vector3.forward;
-
             transform.rotation = Quaternion.LookRotation(input);
-            //transform.rotation = Quaternion.Slerp(transform.rotation,
-            //Quaternion.LookRotation(input),
-            //Time.deltaTime * rotationSpeed);
 
             transform.Translate(Vector3.forward * Time.deltaTime * speed);
         }
@@ -38,11 +33,6 @@ public class PlayerController : MonoBehaviour
         
 
         animation.SetBool("Moving", moving);
-        animation.SetFloat("Velocity Y", oving);
-
-        if (input != Vector3.zero)
-        {
-
-        }
+        animation.SetFloat("Velocity Y", moving ? 1 : 0);
     }
 }
