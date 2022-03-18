@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private float speed = 3;
+    private float speed = 4;
     public float rotationSpeed;
     private Vector3 input;
     bool moving = false;
-    private Animator animation;
+    private Animator animationChecker;
 
     private void Start()
     {
-        animation = GetComponent<Animator>();
+        animationChecker = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -30,9 +30,9 @@ public class PlayerController : MonoBehaviour
             transform.Translate(Vector3.forward * Time.deltaTime * speed);
         }
 
-        
+        //Debug.Log(1.0f / Time.deltaTime);
 
-        animation.SetBool("Moving", moving);
-        animation.SetFloat("Velocity Y", moving ? 1 : 0);
+        animationChecker.SetBool("Moving", moving);
+        animationChecker.SetFloat("Velocity Y", moving ? 1 : 0);
     }
 }

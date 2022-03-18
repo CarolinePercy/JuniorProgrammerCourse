@@ -30,23 +30,18 @@ namespace CraftingAnims
 			OnFootL.Invoke();
 		}
 
-		public void Strike()
-		{
-			OnStrike.Invoke();
-		}
-
 		// Used for animations that contain root motion to drive the character’s
 		// position and rotation using the “Motion” node of the animation file.
 		void OnAnimatorMove()
 		{
-			if (animator) {
-				if (crafterController) {
-					if (crafterController.isLocked) {
-						transform.parent.rotation = animator.rootRotation;
-						transform.parent.position += animator.deltaPosition;
-					}
-				}
-			}
+			//if (animator) {
+			//	if (crafterController) {
+			//		if (crafterController.isLocked) {
+			//			transform.parent.rotation = animator.rootRotation;
+			//			transform.parent.position += animator.deltaPosition;
+			//		}
+			//	}
+			//}
 		}
 	}
 }

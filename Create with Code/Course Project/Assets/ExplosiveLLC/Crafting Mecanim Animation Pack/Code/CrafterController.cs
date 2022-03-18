@@ -117,6 +117,11 @@ namespace CraftingAnims
 				inputRun = Input.GetButton("Fire3");
 			}
 			catch (System.Exception) { Debug.LogWarning("Inputs not found! Please see Readme file."); }
+
+			if (Input.GetKeyDown(KeyCode.LeftShift))
+            {
+				inputRun = true;
+            }				
 		}
 
 		private void Update()
