@@ -3761,6 +3761,7 @@ GameObject:
   - component: {fileID: 8378779704310682182}
   - component: {fileID: -9081603648301459509}
   - component: {fileID: 3329005370632057289}
+  - component: {fileID: 4134402591942051524}
   m_Layer: 0
   m_Name: Labrador
   m_TagString: Untagged
@@ -3876,6 +3877,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.11799929, y: 0.20227896, z: 0.28284726}
   m_Center: {x: 0.0015292168, y: 0.09480798, z: 0.032637145}
+--- !u!114 &4134402591942051524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9139325667081512525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5607f9ad801848441ac9bea45a2ec5ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9139325667081512969
 GameObject:
   m_ObjectHideFlags: 0
