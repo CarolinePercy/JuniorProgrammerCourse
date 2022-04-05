@@ -18,6 +18,7 @@ public class PlantController : MonoBehaviour
     private float startTime;
     private MeshRenderer renderComponent;
     private Transform canvas;
+    private Transform player;
 
     private GameObject personalIssueObject;
     private Vector3 issueOffset = new Vector3(0, 10, 0);
@@ -37,6 +38,7 @@ public class PlantController : MonoBehaviour
         setTime();
         renderComponent = GetComponent<MeshRenderer>();
         canvas = GameObject.Find("Canvas").transform;
+        player = GameObject.Find("Player").transform;
         personalIssueObject = Instantiate(issueObject, canvas);
         personalIssueObject.SetActive(false);
     }
@@ -75,7 +77,7 @@ public class PlantController : MonoBehaviour
 
         personalIssueObject.transform.position = new Vector3(s.x, s.y, 0) + issueOffset;
 
-        if (Input.GetKeyDown(KeyCode.O))
+        if (Input.GetKeyDown(KeyCode.O) && Vector3.Distance(transform.position, player.position) < 2)
         {
             Heal();
         }
@@ -93,9 +95,11 @@ public class PlantController : MonoBehaviour
                 break;
             case IssueType.BUGS:
                 personalIssueObject.transform.GetChild(0).gameObject.SetActive(false);
+                personalIssueObject.transform.GetChild(1).gameObject.SetActive(true);
                 break;
             case IssueType.DEHYDRATION:
                 personalIssueObject.transform.GetChild(1).gameObject.SetActive(false);
+                personalIssueObject.transform.GetChild(0).gameObject.SetActive(true);
                 break;
         }
     }
@@ -106,6 +110,7 @@ public class PlantController : MonoBehaviour
         setTime();
         currentColour = new Color(1,1,1,1);
         renderComponent.materials[0].SetColor("_Color", currentColour);
+        personalIssueObject.SetActive(false);
     }
 
     void setTime()

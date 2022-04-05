@@ -3759,9 +3759,9 @@ GameObject:
   - component: {fileID: 9139325667081745435}
   - component: {fileID: 9139325667091121405}
   - component: {fileID: 8378779704310682182}
-  - component: {fileID: -9081603648301459509}
   - component: {fileID: 3329005370632057289}
-  - component: {fileID: 4134402591942051524}
+  - component: {fileID: 8020761852662824953}
+  - component: {fileID: 1751375882902470651}
   m_Layer: 0
   m_Name: Labrador
   m_TagString: Untagged
@@ -3852,18 +3852,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
---- !u!114 &-9081603648301459509
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9139325667081512525}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa6a1ac57621bdd48b02e4efb6021a2f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &3329005370632057289
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3877,7 +3865,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.11799929, y: 0.20227896, z: 0.28284726}
   m_Center: {x: 0.0015292168, y: 0.09480798, z: 0.032637145}
---- !u!114 &4134402591942051524
+--- !u!114 &8020761852662824953
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3886,7 +3874,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 9139325667081512525}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5607f9ad801848441ac9bea45a2ec5ef, type: 3}
+  m_Script: {fileID: 11500000, guid: 2c52ee72091692143869a36cdefe1fd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1751375882902470651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9139325667081512525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81e62e9a8a22fac478a927ce940e28f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &9139325667081512969
