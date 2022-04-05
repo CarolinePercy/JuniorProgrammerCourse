@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private float speed = 4;
-    public float rotationSpeed;
     private Vector3 input;
     bool moving = false;
     private Animator animationChecker;
@@ -17,6 +16,11 @@ public class PlayerController : MonoBehaviour
 
     // Update is called once per frame
     void Update()
+    {
+        MovePlayer();
+    }
+
+    void MovePlayer()
     {
         moving = false;
         input = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));

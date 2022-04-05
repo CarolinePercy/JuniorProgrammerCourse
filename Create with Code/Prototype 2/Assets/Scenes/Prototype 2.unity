@@ -473,6 +473,7 @@ GameObject:
   m_Component:
   - component: {fileID: 755836534}
   - component: {fileID: 755836533}
+  - component: {fileID: 755836535}
   m_Layer: 0
   m_Name: Spawn Manager
   m_TagString: Untagged
@@ -510,6 +511,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &755836535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 755836532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45c0e1f24e2ce4a5b9bf1f3a7499cd45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pooledObjects: []
+  objectToPool: {fileID: 2030532589743160054, guid: 248368d7c52ceec4091dbdccd92d0504, type: 3}
+  amountToPool: 20
 --- !u!1001 &830324816
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -614,10 +630,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1053215429}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9acf18c99042afa459f5108546d4c847, type: 3}
+  m_Script: {fileID: 11500000, guid: 38e917c52987daa41af6a0305d9813c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
   projectilePrefab: {fileID: 2030532589743160054, guid: 248368d7c52ceec4091dbdccd92d0504, type: 3}
 --- !u!1 &1590138454
 GameObject:
@@ -756,6 +771,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pug
       objectReference: {fileID: 0}
+    - target: {fileID: 959819783777678092, guid: f1347a970de641e4d95b4af726f488c4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 979359598592787538, guid: f1347a970de641e4d95b4af726f488c4, type: 3}
       propertyPath: speed
       value: 10
@@ -769,6 +788,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1259608214192234154, guid: 248368d7c52ceec4091dbdccd92d0504, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2030532589740921018, guid: 248368d7c52ceec4091dbdccd92d0504, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2030532589742833466, guid: 248368d7c52ceec4091dbdccd92d0504, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -817,6 +844,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Steak
       objectReference: {fileID: 0}
+    - target: {fileID: 2030532589743160054, guid: 248368d7c52ceec4091dbdccd92d0504, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7257337600459273679, guid: 248368d7c52ceec4091dbdccd92d0504, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 248368d7c52ceec4091dbdccd92d0504, type: 3}
 --- !u!1 &2030532589090606562 stripped
@@ -850,6 +885,10 @@ PrefabInstance:
     - target: {fileID: 6463297975510192550, guid: d7e9afcdf7956cc4c804db58787c6c02, type: 3}
       propertyPath: m_Name
       value: German Shepherd
+      objectReference: {fileID: 0}
+    - target: {fileID: 6463297975510192550, guid: d7e9afcdf7956cc4c804db58787c6c02, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6463297975510376404, guid: d7e9afcdf7956cc4c804db58787c6c02, type: 3}
       propertyPath: m_RootOrder
@@ -899,6 +938,10 @@ PrefabInstance:
       propertyPath: speed
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 7265443573549551217, guid: d7e9afcdf7956cc4c804db58787c6c02, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d7e9afcdf7956cc4c804db58787c6c02, type: 3}
 --- !u!1001 &9139325667654204088
@@ -915,6 +958,10 @@ PrefabInstance:
     - target: {fileID: 9139325667081512525, guid: 69074cd5d4dd86f469581a93a309818c, type: 3}
       propertyPath: m_Name
       value: Labrador
+      objectReference: {fileID: 0}
+    - target: {fileID: 9139325667081512525, guid: 69074cd5d4dd86f469581a93a309818c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9139325667081745435, guid: 69074cd5d4dd86f469581a93a309818c, type: 3}
       propertyPath: m_RootOrder
