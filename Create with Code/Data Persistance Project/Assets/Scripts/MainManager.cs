@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System.IO;
 
 public class MainManager : MonoBehaviour
 {
@@ -12,14 +13,26 @@ public class MainManager : MonoBehaviour
 
     public Text ScoreText;
     public GameObject GameOverText;
-    
+    public Text BestScoreText;
+    public InputField submittedNameInput;
+
     private bool m_Started = false;
     private int m_Points;
+
+    private int m_BestPoints;
+    private string m_BestPlayer = "Name";
     
     private bool m_GameOver = false;
+    private bool beatHighScore = false;
 
-    
+
     // Start is called before the first frame update
+
+    private void Awake()
+    {
+        LoadScore();
+    }
+
     void Start()
     {
         const float step = 0.6f;
@@ -57,6 +70,7 @@ public class MainManager : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
+                SaveScore();
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
         }
@@ -72,5 +86,61 @@ public class MainManager : MonoBehaviour
     {
         m_GameOver = true;
         GameOverText.SetActive(true);
+
+        if (m_Points > m_BestPoints)
+        {
+            m_BestPoints = m_Points;
+            submittedNameInput.gameObject.SetActive(true);
+            beatHighScore = true;
+        }
+    }
+
+    [System.Serializable]
+    class SaveData
+    {
+        public int points;
+        public string name;
+    }
+
+    public void SaveScore()
+    {
+        SaveData data = new SaveData();
+
+        if (submittedNameInput.text != "")
+        {
+            m_BestPlayer = submittedNameInput.text;
+        }
+
+        else if (beatHighScore)
+        {
+            m_BestPlayer = "Name";
+        }
+
+        data.points = m_BestPoints;
+        data.name = m_BestPlayer;
+
+        string json = JsonUtility.ToJson(data);
+
+        File.WriteAllText(Application.persistentDataPath + "/savefile.json", json);
+    }
+
+    public void LoadScore()
+    {
+        string path = Application.persistentDataPath + "/savefile.json";
+        if (File.Exists(path))
+        {
+            string json = File.ReadAllText(path);
+            SaveData data = JsonUtility.FromJson<SaveData>(json);
+
+            m_BestPoints = data.points;
+            m_BestPlayer = data.name;
+        }
+
+        UpdateText();
+    }
+
+    void UpdateText()
+    {
+        BestScoreText.text = $"Best Score : {m_BestPlayer} : {m_BestPoints}";
     }
 }
